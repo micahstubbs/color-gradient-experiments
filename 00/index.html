@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .rainbow {
+      background-image: gradient(linear, left top, right top,
+        color-stop(0, red),
+        color-stop(0.15, orange),
+        color-stop(0.3, yellow),
+        color-stop(0.45, green),
+        color-stop(0.65, blue),
+        color-stop(0.8, indigo),
+        color-stop(1, violet)
+      );
+      color:transparent;
+      background-clip: text;
+
+      /* for webkit browsers Chrome and Safari */
+      background-image: -webkit-gradient(linear, left top, right top, 
+        color-stop(0, red),
+        color-stop(0.15, orange),
+        color-stop(0.3, yellow), 
+        color-stop(0.45, green), 
+        color-stop(0.65, blue),
+        color-stop(0.8, indigo),
+        color-stop(1, violet)
+      );
+      -webkit-background-clip: text;
+    }
+
+    .text {
+      font-size: 57px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function rainbow(string) {
+      const span = document.createElement('span')
+      span.classList.add('rainbow', 'text')
+      span.innerHTML = string
+      return span
+    }
+
+    document
+      .getElementsByTagName('body')[0]
+      .appendChild(rainbow('rainbow text created with a CSS gradient'))
+  </script>
+</body>
+</html>
